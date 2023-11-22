@@ -22,10 +22,16 @@ This document aims to serve as a comprehensive guide for developers and enthusia
 
 Let's embark on a journey to combine the power of GPT-2 fine-tuning, Flask, and responsive web design to craft a sophisticated and user-friendly chatbot application.
 
+## Custom Training Dataset format
+
+It used document based of [Q] and [A] format, it help to train it in simple.
+
+![alt text for screen readers](/images/dataset.png "Overview")
+
 ## Chatbot UI
 
-![alt text for screen readers](/images/2.png "Text to show on mouseover")
+![alt text for screen readers](/images/2.png "Overview")
 
-![alt text for screen readers](/images/3.png "Text to show on mouseover")
+![alt text for screen readers](/images/3.png "Chatbot clicked")
 
 <!-- <img src="./images/1.png" alt="MarineGEO circle logo" style="height: 200px; width:200px;"/> -->

@@ -79,7 +79,6 @@ class Chatbox {
   }
 
   updateChatText(chatbox) {
-    const API_KEY = "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";
     var html = '';
 
 
