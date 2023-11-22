@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <head>
     <meta charset="UTF-8">
     <title>Chatbot</title>
 </head>
 <body>
-    <div class="container">
-        <div class="chatbox">
-            <div class="chatbox__support chatbox--active">
-                <div class="chatbox__header">
-                    <div class="chatbox__image--header">
-                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+    <div class="container py-5">
+        <!-- <div class="button_container">
+            <button id="toggleChatButton">Toggle Chatbot</button>
+        </div> -->
+        <h1 class="text-center">Chat Solution</h1>
+        <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
+            <div class="col">
+                <div class="card">
+                    <!-- <img src="./img/dish1.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title"> eCommerce FAQ chatbot</h5>
+                        <p class="card-text">An eCommerce FAQ chatbot is an AI-powered 
+                            tool designed to assist customers by providing instant responses to 
+                            their queries and frequently asked questions within an online retail environment. 
+                            It utilizes natural language processing (NLP) and machine learning algorithms to 
+                            understand customer inquiries and deliver accurate, relevant, and helpful information.</p>
                     </div>
-                    <div class="chatbox__content--header">
-                        <h4 class="chatbox__heading--header">Ecommerce FAQ</h4>
-                        <p class="chatbox__description--header">Hi. I am Ecommerce FAQ. How can I help you?</p>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <!-- <h3>1$</h3> -->
+                        <button class="btn btn-primary">Chat Now</button>
                     </div>
                 </div>
-                <div class="chatbox__messages">
-                    <!-- Messages for Ecommerce FAQ -->
-                    <div></div>
+              
+                <div class="chatbox" id="chatbox1" style="display: none;">
+                    <div class="chatbox__support chatbox--active" data-name="EcommerceFAQ">
+                        <div class="chatbox__header">
+                            <div class="chatbox__image--header">
+                                <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                            </div>
+                            <div class="chatbox__content--header">
+                                <h4 class="chatbox__heading--header">Ecommerce FAQ</h4>
+                                <p class="chatbox__description--header">Hi. I am Ecommerce FAQ. How can I help you?</p>
+                            </div>
+                        </div>
+                        <div class="chatbox__messages">
+                            <!-- Messages for Ecommerce FAQ -->
+                            <div></div>
+                        </div>
+                        <div class="chatbox__footer">
+                            <input type="text" id="ecommerceTextField" placeholder="Write a message..." data-name="EcommerceFAQ">
+                            <button class="chatbox__send--footer send__button" data-name="EcommerceFAQ">Send</button>
+                        </div>
+                    </div>
+                
                 </div>
-                <div class="chatbox__footer">
-                    <input type="text" id="ecommerceTextField" placeholder="Write a message...">
-                    <button class="chatbox__send--footer send__button">Send</button>
+            
+               
+            </div>
+            <div class="col">
+                
+                <div class="card">
+                    <!-- <img src="./img/dish1.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Working in Progress</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                            dignissimos accusantium amet similique velit iste.</p>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                    
+                        <button class="btn btn-primary">Chat Now</button>
+                    </div>
+                </div>
+                <!-- <div class="chatbox" id="chatbox2" style="display: none;"> -->
+                <div class="chatbox" id="chatbox2" style="display: none;"   >
+                    <div class="chatbox__support chatbox--active" data-name="MalaysianQA">
+                        <div class="chatbox__header">
+                            <div class="chatbox__image--header">
+                                <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                            </div>
+                            <div class="chatbox__content--header">
+                                <h4 class="chatbox__heading--header">Malaysian QA</h4>
+                                <p class="chatbox__description--header">Hi. I am Malaysian QA. How can I help you?</p>
+                            </div>
+                        </div>
+                        <div class="chatbox__messages">
+                        
+                            <div></div>
+                        </div>
+                        <div class="chatbox__footer">
+                            <input type="text" id="malaysianQATextField" placeholder="Write a message..." data-name="MalaysianQA">
+                            <button class="chatbox__send--footer send__button " data-name="MalaysianQA">Send</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <div class="chatbox">
-            <div class="chatbox__support chatbox--active">
-                <div class="chatbox__header">
-                    <div class="chatbox__image--header">
-                        <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
-                    </div>
-                    <div class="chatbox__content--header">
-                        <h4 class="chatbox__heading--header">Malaysian QA</h4>
-                        <p class="chatbox__description--header">Hi. I am Malaysian QA. How can I help you?</p>
-                    </div>
-                </div>
-                <div class="chatbox__messages">
-                    <!-- Messages for Malaysian QA -->
-                    <div></div>
-                </div>
-                <div class="chatbox__footer">
-                    <input type="text" id="malaysianQATextField" placeholder="Write a message...">
-                    <button class="chatbox__send--footer send__button">Send</button>
-                </div>
-            </div>
-        </div>
+    
+       
     </div>
     
 
@@ -59,4 +107,30 @@
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
 
 </body>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const chatButtons = document.querySelectorAll(".btn.btn-primary"); // Select all buttons with the class 'btn-primary'
+
+        chatButtons.forEach(function (button, index) {
+            button.addEventListener("click", function () {
+                const chatbox = document.getElementById(`chatbox${index + 1}`); // Select the chatbox corresponding to the clicked button
+                chatbox.style.display = chatbox.style.display === "none" ? "block" : "none"; // Toggle the display of the chatbox
+            });
+        });
+    });
+</script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const chatButtons = document.querySelectorAll(".btn.btn-primary"); // Select all buttons with the class 'btn-primary'
+
+        chatButtons.forEach(function (button, index) {
+            button.addEventListener("click", function () {
+                const chatbox = document.getElementById(`chatbox${index + 1}`); // Select the chatbox corresponding to the clicked button
+                chatbox.style.display = chatbox.style.display === "none" ? "block" : "none"; // Toggle the display of the chatbox
+            });
+        });
+    });
+</script>
+
 </html>

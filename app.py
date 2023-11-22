@@ -17,17 +17,23 @@ app = Flask(__name__)
 def index_get():
     return render_template("base.html")
 
+
 @app.post("/predict")
 def predict():
-    model2_path = "custom_q_and_a"
-    # sequence2 = "[Q] Do you offer international shipping and how can I track my order? "
-    max_len = 100
-    
     text = request.get_json().get("message")
-    concate_text = "[Q] "+ text
-    question, answer, formatted_text = generate_text(model2_path,concate_text,max_len)
-    message = {"answer": answer}
-    return jsonify(message)
+    source = request.get_json().get("source")
+    
+    if source == 'ecommerceTextField':
+        model2_path = "custom_q_and_a"
+        # sequence2 = "[Q] Do you offer international shipping and how can I track my order? "
+        max_len = 100
+        concate_text = "[Q] "+ text
+        question, answer, formatted_text = generate_text(model2_path,concate_text,max_len)
+        message = {"answer": answer}
+        return jsonify(message)
+    elif source == 'malaysianQATextField':
+        message = {"answer": "The program havent done yet"}
+        return jsonify(message)
 
 if __name__=="__main__":
     app.run(debug=True)
